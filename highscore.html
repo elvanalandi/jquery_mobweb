@@ -8,17 +8,22 @@
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
 	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+	<style>
+
+	</style>
 </head>
 <body onload="load()">
 	<div data-role="page">
 		<div data-role="header">
 				<div data-role="navbar">
 				    <ul>
-				        <li><a href="index.html">Home</a></li>
-				        <li><a href="highscore.html" class="ui-btn-active">Highscore</a></li>
+				        <li><a href="index.html" rel="external">Home</a></li>
+				        <li><a href="highscore.html" class="ui-btn-active" rel="external">Highscore</a></li>
 				    </ul>
 				</div>
 		</div>
+
 		<div role="main" class="ui-content">
 			<h2 style="text-align: center">High Score</h2>
 			<table data-role="table" class="ui-responsive table-stroke">
