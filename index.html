@@ -88,6 +88,12 @@
 		margin-left: auto;
 	}
 
+	.btn-image {
+		vertical-align: middle;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
 	img {
 		width : 208px;
 		height : 208px;
@@ -155,20 +161,21 @@
 	/* Small phones: from 0 to 480px */
 	@media only screen and (max-width: 480px) and (min-width: 0px) {
 		img {
-			width : 78px;
-			height : 78px;
+			width : 98px;
+			height : 98px;
 		}
 
 		.player-image{
-			width : 80px;
-			height : 80px;
+			width : 100px;
+			height : 100px;
 		}
 
 		.bot-image{
-			width : 80px;
-			height : 80px;
+			width : 100px;
+			height : 100px;
 		}
 	}
+	
 </style>
 
 </head>
@@ -190,37 +197,45 @@
 				<h1 class="title">ROCK PAPER SCISSORS</h1>
 				<div class="container" id="nickname_form">
 					<input type="text" id="nick" placeholder="nickname">
-					<button id="submit">Submit name</button>
+					<div class="ui-grid-solo">
+						<div class="ui-block-a"><button id="submit">Submit name</button></div>
+					</div>
 				</div>
 				<div class="flex-container">
-					<div class="row">
-						<div class="winlose">
-							<h1>WIN</h1>
-							<h1 id="win-score">0</h1>
+					<div class="ui-grid-solo">
+						<div class="ui-grid-b">
+							<div class="ui-block-a">
+								<h1>WIN</h1>
+								<h1 id="win-score">0</h1>
+							</div>
+							<div class="ui-block-b">
+								<h1>LOSE</h1>
+								<h1 id="lose-score">0</h1>
+							</div>
+							<div class="ui-block-c">
+								<h1>TIES</h1>
+								<h1 id="tie-score">0</h1>
+							</div>
 						</div>
-						<div class="winlose">
-							<h1>LOSE</h1>
-							<h1 id="lose-score">0</h1>
+						<div class="ui-grid-a">
+							<div class="images ui-block-a">
+								<div class="player-image"></div>
+							</div>
+							<div class="images ui-block-b">
+								<div class="bot-image"></div>
+							</div>
 						</div>
-						<div class="tie">
-							<h1>TIES</h1>
-							<h1 id="tie-score">0</h1>
-						</div>
-						<div class="images">
-							<div class="player-image"></div>
-						</div>
-						<div class="images">
-							<div class="bot-image"></div>
-						</div>
-						<div id="image-btn" class="col-12 col-md-12" style="margin-top:20px;">
-							<button name="paper" id="paper"><img style="width: 50px; height: 50px;" src="/src/images/paper-btn.png"></button>
-							<button name="rock" id="rock"><img style="width: 50px; height: 50px;" src="/src/images/rock-btn.png"></button>
-							<button name="scissor" id="scissor"><img style="width: 50px; height: 50px;" src="/src/images/scissor-btn.png"></button>
+						<div class="ui-grid-b">
+							<div class="ui-block-a"><button name="paper" id="paper"><img style="width: 50px; height: 50px;" src="src/images/paper-btn.png"></button></div>
+							<div class="ui-block-b"><button name="rock" id="rock"><img style="width: 50px; height: 50px;" src="src/images/rock-btn.png"></button></div>
+							<div class="ui-block-c"><button name="scissor" id="scissor"><img style="width: 50px; height: 50px;" src="src/images/scissor-btn.png"></button></div>
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-12" style="text-align: center;margin : 10px">
-					<button type="button" class="btn btn-primary" id="stop">Stop Playing</button>
+				<div class="ui-grid-b">
+					<div class="ui-block-a"></div>
+					<div class="ui-block-b"><button type="button" class="btn btn-primary" id="stop">Stop Playing</button></div>
+					<div class="ui-block-c"></div>
 				</div>
 	</div><!-- /content -->
 </div><!-- /page -->
@@ -308,45 +323,45 @@
 
 		$("#paper").on("click", function() {
 			var rand = random();
-			$('.player-image').empty().append($('<img />', { src: "/src/images/paper.png" }));
+			$('.player-image').empty().append($('<img />', { src: "src/images/paper.png" }));
 			if(rand == 1){
-				$('.bot-image').empty().append($('<img />', { src: "/src/images/paper.png" }));
+				$('.bot-image').empty().append($('<img />', { src: "src/images/paper.png" }));
 			}
 			else if(rand == 2){
-				$('.bot-image').empty().append($('<img />', { src: "/src/images/rock.png" }));
+				$('.bot-image').empty().append($('<img />', { src: "src/images/rock.png" }));
 			}
 			else if(rand == 3){
-				$('.bot-image').empty().append($('<img />', { src: "/src/images/scissor.png" }));
+				$('.bot-image').empty().append($('<img />', { src: "src/images/scissor.png" }));
 			}
 			check(1,rand);
 		});
 
 		$("#rock").on("click", function() {
 			var rand = random();
-			$('.player-image').empty().append($('<img />', { src: "/src/images/rock.png" }));
+			$('.player-image').empty().append($('<img />', { src: "src/images/rock.png" }));
 			if(rand == 1){
-				$('.bot-image').empty().append($('<img />', { src: "/src/images/paper.png" }));
+				$('.bot-image').empty().append($('<img />', { src: "src/images/paper.png" }));
 			}
 			else if(rand == 2){
-				$('.bot-image').empty().append($('<img />', { src: "/src/images/rock.png" }));
+				$('.bot-image').empty().append($('<img />', { src: "src/images/rock.png" }));
 			}
 			else if(rand == 3){
-				$('.bot-image').empty().append($('<img />', { src: "/src/images/scissor.png" }));
+				$('.bot-image').empty().append($('<img />', { src: "src/images/scissor.png" }));
 			}
 			check(2,rand);
 		});
 
 		$("#scissor").on("click", function() {
 			var rand = random()
-			$('.player-image').empty().append($('<img />', { src: "/src/images/scissor.png" }));
+			$('.player-image').empty().append($('<img />', { src: "src/images/scissor.png" }));
 			if(rand == 1){
-				$('.bot-image').empty().append($('<img />', { src: "/src/images/paper.png" }));
+				$('.bot-image').empty().append($('<img />', { src: "src/images/paper.png" }));
 			}
 			else if(rand == 2){
-				$('.bot-image').empty().append($('<img />', { src: "/src/images/rock.png" }));
+				$('.bot-image').empty().append($('<img />', { src: "src/images/rock.png" }));
 			}
 			else if(rand == 3){
-				$('.bot-image').empty().append($('<img />', { src: "/src/images/scissor.png" }));
+				$('.bot-image').empty().append($('<img />', { src: "src/images/scissor.png" }));
 			}
 			check(3,rand);
 		});
