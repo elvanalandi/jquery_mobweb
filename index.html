@@ -7,10 +7,15 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Multi-page template</title>
 
-	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
-<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+	<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 
+	<!-- PWA DEPENDACIES -->
+	<link rel="js" type="/sw.js" href="">
+	<link rel="manifest" href="/manifest.json">
+	<script src="/src/js/app.js"></script>
+	
 <style>
 
 	body{
@@ -175,8 +180,8 @@
 	<div data-role="header">
 			<div data-role="navbar">
 			    <ul>
-			        <li><a href="index.html" class="ui-btn-active">Home</a></li>
-			        <li><a href="highscore.html">Highscore</a></li>
+			        <li><a href="index.html" class="ui-btn-active" rel="external">Home</a></li>
+			        <li><a href="highscore.html" rel="external">Highscore</a></li>
 			    </ul>
 			</div>
 	</div><!-- /header -->
@@ -221,6 +226,9 @@
 </div><!-- /page -->
 	
 	<script>
+		$(document).ready(function() {
+		  
+		});
 	  if ('serviceWorker' in navigator) {
 	    console.log("Will the service worker register?");
 	    navigator.serviceWorker.register('sw.js')
@@ -359,6 +367,10 @@
 			localStorage.setItem("score",score);
 			$(location).attr('href','highscore.html');
 		})
+
+		$( window ).on( "navigate", function() {
+			console.log( "navigated!" );
+		});
 	</script>
 
 </body>
