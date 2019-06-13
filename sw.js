@@ -4,8 +4,6 @@ self.addEventListener('install', function(event) {
       return cache.addAll([
           '/index.html',
           '/highscore.html',
-          '/src/css/styles.css',
-          '/src/js/script.js',
           '/src/js/app.js',
           '/manifest.json',
           '/src/images/paper-btn.png',
@@ -18,8 +16,10 @@ self.addEventListener('install', function(event) {
           '/src/images/icons-512.png',
           '/src/images/bg.png',
           '/favicon.ico',
-          '/bootstrap/bootstrap-4.3.1-dist/css/bootstrap.min.css',
-          '/bootstrap/bootstrap-4.3.1-dist/js/bootstrap.min.js'
+          'https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css',
+          'https://code.jquery.com/jquery-1.11.1.min.js',
+          'https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js'
+          
         // etc
       ]);
     })
