@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Multi-page template</title>
+	<title>Rock Paper Scissor</title>
 
 	<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
 	<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
@@ -13,9 +13,10 @@
 	<link rel="js" type="/sw.js" href="">
 	<link rel="manifest" href="/manifest.json">
 	<script src="/src/js/app.js"></script>
-
 	<style>
-
+		.ui-table-columntoggle-btn {
+		    display: none !important;
+		}
 	</style>
 </head>
 <body onload="load()">
@@ -31,7 +32,7 @@
 
 		<div role="main" class="ui-content">
 			<h2 style="text-align: center">High Score</h2>
-			<table data-role="table" class="ui-responsive table-stroke">
+    		<table data-role="table" id="table-column-toggle" data-mode="columntoggle" class="ui-responsive table-stroke">
 				<thead>
 					<tr>
 						<th>Rank</th>
